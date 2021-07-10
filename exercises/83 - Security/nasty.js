@@ -10,8 +10,8 @@ input.addEventListener('input', () => {
 // trigger an input even on page load
 input.dispatchEvent(new Event('input'));
 
-buttons.forEach(button =>
-  button.addEventListener('click', e => {
+buttons.forEach((button) =>
+  button.addEventListener('click', (e) => {
     alert(e.currentTarget.textContent);
   })
 );

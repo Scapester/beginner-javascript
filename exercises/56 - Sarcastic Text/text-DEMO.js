@@ -41,14 +41,12 @@ const filters = {
 
 function handleInput(text) {
   const filter = document.querySelector('[name="filter"]:checked').value;
-  const mod = Array.from(text)
-    .map(filters[filter])
-    .join('');
+  const mod = Array.from(text).map(filters[filter]).join('');
   result.textContent = mod;
 }
 
-textarea.addEventListener('input', e => handleInput(e.target.value));
+textarea.addEventListener('input', (e) => handleInput(e.target.value));
 
-filterInputs.forEach(input =>
+filterInputs.forEach((input) =>
   input.addEventListener('input', () => handleInput(textarea.value))
 );

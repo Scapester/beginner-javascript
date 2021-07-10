@@ -38,15 +38,15 @@ const filters = {
 
 function transformText(text) {
   // const filter = document.querySelector('[name="filter"]:checked').value;
-  const filter = filterInputs.find(input => input.checked).value;
+  const filter = filterInputs.find((input) => input.checked).value;
   // take the text, and loop over each letter.
   const mod = Array.from(text).map(filters[filter]);
   result.textContent = mod.join('');
 }
 
-textarea.addEventListener('input', e => transformText(e.target.value));
+textarea.addEventListener('input', (e) => transformText(e.target.value));
 
-filterInputs.forEach(input =>
+filterInputs.forEach((input) =>
   input.addEventListener('input', () => {
     transformText(textarea.value);
   })

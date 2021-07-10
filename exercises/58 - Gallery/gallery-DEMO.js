@@ -64,11 +64,11 @@ function Gallery(gallery) {
     openModal();
   }
 
-  images.forEach(image =>
-    image.addEventListener('click', e => showImage(e.currentTarget))
+  images.forEach((image) =>
+    image.addEventListener('click', (e) => showImage(e.currentTarget))
   );
-  images.forEach(image =>
-    image.addEventListener('keyup', e => {
+  images.forEach((image) =>
+    image.addEventListener('keyup', (e) => {
       if (e.key === 'Enter') showImage(e.currentTarget);
     })
   );

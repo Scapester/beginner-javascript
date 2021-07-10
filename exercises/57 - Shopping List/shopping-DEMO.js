@@ -32,7 +32,7 @@ function handleSubmit(e) {
 }
 
 function markAsComplete(id) {
-  const itemRef = items.find(item => item.id === id);
+  const itemRef = items.find((item) => item.id === id);
   console.log(itemRef);
   // this is just a reference to the item
   itemRef.complete = !itemRef.complete;
@@ -42,13 +42,13 @@ function markAsComplete(id) {
 function deleteItem(id) {
   console.log(items, id);
   // find the item's index
-  items = items.filter(item => item.id !== id);
+  items = items.filter((item) => item.id !== id);
   list.dispatchEvent(new CustomEvent('itemsUpdated'));
 }
 function displayItems() {
   const html = items
     .map(
-      item => `<li class="shopping-item">
+      (item) => `<li class="shopping-item">
     <input value="${item.id}" type="checkbox" ${
         item.complete ? `checked` : ``
       } name="item-${item.id}"/>
@@ -63,13 +63,13 @@ function displayItems() {
 shoppingForm.addEventListener('submit', handleSubmit);
 
 // List is an empty div where we add items with JS
-list.addEventListener('click', e => {
+list.addEventListener('click', (e) => {
   if (e.target.matches('button')) {
     deleteItem(parseFloat(e.target.value));
   }
 });
 
-list.addEventListener('input', e => {
+list.addEventListener('input', (e) => {
   if (e.target.matches('input')) {
     markAsComplete(parseFloat(e.target.value));
   }
